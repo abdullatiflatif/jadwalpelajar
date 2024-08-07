@@ -14,9 +14,9 @@
   </head>
 
 <body class="m-3">
-  <h1>Absesi_Siswa</h1>
+  <h1>jadwal pelajaran</h1>
 
-  <table class="table" id="absensi-siswa">
+  <table class="table" id="matapelajaran">
     <thead>
       <tr>
         <th scope="col">#</th>
@@ -65,11 +65,11 @@
     import { ambilDaftarJadwal, formatAngka, hapusJadwal } from './main.js';
 
     $(document).ready(async function() {
-      let elemenDaftar = $("#jadwalpelajaran > tbody");
-      let daftarAbsensi = await ambilDaftarJadwal();
+      let elemenDaftar = $("#matapelajaran > tbody");
+      let daftarpelajaran = await ambilDaftarJadwal();
       let nomor = 1;
       
-      daftarJadwal.forEach((data) => {
+      daftarpelajaran.forEach((data) => {
         elemenDaftar.append(
           '<tr>' +
           '<th>' + hari + '</th>' +
@@ -92,12 +92,12 @@
       });
 
       $('.tombol-hapus').click(async function() {
-        await hapusJadwal($(this).attr('data'));
+        await hapusPelajaram($(this).attr('data'));
         location.reload();
       })
 
       $('.link-ubah').click(async function() {
-        window.location.replace('ubah-jadwal.html?docId=' + $(this).attr('data'));
+        window.location.replace('ubah-pelajaran.html?docId=' + $(this).attr('data'));
       })
 
       $('#loader').hide();
@@ -107,7 +107,7 @@
    <footer class="py-3 bg-dark-subtle mt-auto">
     <ul class="nav justify-content-center border-bottom pb-3 mb-3">
       <li class="nav-item"><a href="index.html" class="nav-link px-2 text-body-secondary">Beranda</a></li>
-      <li class="nav-item"><a href="form-absensi.html" id="link-login-penjual" class="nav-link px-2 text-body-secondary">tambah data</a></li>
+      <li class="nav-item"><a href="form-pelajaran.html" id="link-login-penjual" class="nav-link px-2 text-body-secondary">tambah data</a></li>
     </ul>
     <p class="text-center text-body-secondary">&copy; </p>
   </footer>
