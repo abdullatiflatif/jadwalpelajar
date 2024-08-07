@@ -78,3 +78,39 @@
           '<td>' + data.matapelajaran + '</td>' +
           '<td>' + data.namaguru + '</td>' +
           '<td>' + data.waktu + '</td>' +
+          
+          '<td class="stack-up">' +
+          ' <a href="#" class="btn btn-warning link-ubah"  data="' +
+          data.id +
+          '">ubah</a> ' +
+          ' <button class="btn btn-danger tombol-hapus" data="' +
+          data.id +
+          '">Hapus</button>' + '</td>' +
+          '</tr>'
+        );
+        nomor = nomor + 1;
+      });
+
+      $('.tombol-hapus').click(async function() {
+        await hapusJadwal($(this).attr('data'));
+        location.reload();
+      })
+
+      $('.link-ubah').click(async function() {
+        window.location.replace('ubah-jadwal.html?docId=' + $(this).attr('data'));
+      })
+
+      $('#loader').hide();
+
+    });
+    </script>
+   <footer class="py-3 bg-dark-subtle mt-auto">
+    <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+      <li class="nav-item"><a href="index.html" class="nav-link px-2 text-body-secondary">Beranda</a></li>
+      <li class="nav-item"><a href="form-absensi.html" id="link-login-penjual" class="nav-link px-2 text-body-secondary">tambah data</a></li>
+    </ul>
+    <p class="text-center text-body-secondary">&copy; </p>
+  </footer>
+</body>
+
+</html>
