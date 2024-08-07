@@ -22,6 +22,7 @@
         <th scope="col">#</th>
         <th scope="col">hari</th>
         <th scope="col">jamke</th>
+        <th scope="col">kelas</th>
         <th scope="col">matapelajaran</th>
         <th scope="col">namaguru</th>
         <th scope="col">waktu</th>
@@ -60,3 +61,20 @@
       align-items: flex-end;
     }
   </style>
+    <script type="module">
+    import { ambilDaftarJadwal, formatAngka, hapusJadwal } from './main.js';
+
+    $(document).ready(async function() {
+      let elemenDaftar = $("#jadwalpelajaran > tbody");
+      let daftarAbsensi = await ambilDaftarJadwal();
+      let nomor = 1;
+      
+      daftarJadwal.forEach((data) => {
+        elemenDaftar.append(
+          '<tr>' +
+          '<th>' + hari + '</th>' +
+          '<td>' + data.jamke + '</td>' +
+          '<td>' + data.kelas + '</td>' +
+          '<td>' + data.matapelajaran + '</td>' +
+          '<td>' + data.namaguru + '</td>' +
+          '<td>' + data.waktu + '</td>' +
