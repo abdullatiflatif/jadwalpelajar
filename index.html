@@ -62,14 +62,14 @@
     }
   </style>
     <script type="module">
-    import { ambilDaftarJadwal, formatAngka, hapusJadwal } from './main.js';
+    import { ambilDaftarMatapelajaran, formatAngka, hapusJadwal } from './main.js';
 
     $(document).ready(async function() {
       let elemenDaftar = $("#matapelajaran > tbody");
-      let daftarpelajaran = await ambilDaftarJadwal();
+      let daftarmatapelajaran = await ambilDaftarMatapelajaran();
       let nomor = 1;
       
-      daftarpelajaran.forEach((data) => {
+      daftarmatapelajaran.forEach((data) => {
         elemenDaftar.append(
           '<tr>' +
           '<th>' + hari + '</th>' +

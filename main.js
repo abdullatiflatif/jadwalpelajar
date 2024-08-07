@@ -27,7 +27,7 @@ const analytics = getAnalytics(app);
 
 export async function ambilDaftarMatapelajaran() {
   const refDokumen = collection(db, "matapelajaran");
-  const kueri = query(refDokumen, orderBy("nama"));
+  const kueri = query(refDokumen, orderBy("hari"));
   const cuplikanKueri = await getDocs(kueri);
 
   let hasil = [];
