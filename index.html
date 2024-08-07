@@ -91,13 +91,13 @@
         nomor = nomor + 1;
       });
 
-      $('.tombol-hapus').click(async function() {
-        await hapusPelajaram($(this).attr('data'));
+    $('.tombol-hapus').click(async function() {
+        await hapusAbsensi($(this).attr('data'));
         location.reload();
       })
 
       $('.link-ubah').click(async function() {
-        window.location.replace('ubah-pelajaran.html?docId=' + $(this).attr('data'));
+        window.location.replace('ubah.jadwal.html?docId=' + $(this).attr('data'));
       })
 
       $('#loader').hide();
